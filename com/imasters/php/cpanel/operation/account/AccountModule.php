@@ -38,6 +38,19 @@ class AccountModule extends cPanelModule {
 	}
 
 	/**
+	 * @param	string $user
+	 * @param	string $pkg
+	 * @return	ChangePackageOperation
+	 */
+	public function changePackage( $user , $pkg ) {
+		$changePackageOperation = new ChangePackageOperation( $this->cpanel );
+		$changePackageOperation->setUser( $user );
+		$changePackageOperation->setPkg( $pkg );
+
+		return $changePackageOperation;
+	}
+
+	/**
 	 * @param	string $username
 	 * @param	string $domain
 	 * @return	CreateAccountOperation
