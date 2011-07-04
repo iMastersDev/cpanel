@@ -16,6 +16,7 @@ require_once 'com/imasters/php/cpanel/operation/account/ModifyAccountOperation.p
 require_once 'com/imasters/php/cpanel/operation/account/PasswdOperation.php';
 require_once 'com/imasters/php/cpanel/operation/account/SuspendAccountOperation.php';
 require_once 'com/imasters/php/cpanel/operation/account/TerminateAccountOperation.php';
+require_once 'com/imasters/php/cpanel/operation/account/UnsuspendAccountOperation.php';
 
 /**
  * @brief	Módulo de contas do cPanel
@@ -154,5 +155,16 @@ class AccountModule extends cPanelModule {
 		$terminateAccountOperation->setKeepdns( $keepdns );
 
 		return $terminateAccountOperation;
+	}
+
+	/**
+	 * @param	string $user
+	 * @return	UnsuspendAccountOperation
+	 */
+	public function unsuspendAccount( $user ) {
+		$unsuspendAccountOperation = new UnsuspendAccountOperation( $this->cpanel );
+		$unsuspendAccountOperation->setUser( $user );
+
+		return $unsuspendAccountOperation;
 	}
 }
