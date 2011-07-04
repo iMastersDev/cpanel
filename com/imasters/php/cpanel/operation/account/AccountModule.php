@@ -10,6 +10,7 @@ require_once 'com/imasters/php/cpanel/operation/account/AccountSummaryOperation.
 require_once 'com/imasters/php/cpanel/operation/account/CreateAccountOperation.php';
 require_once 'com/imasters/php/cpanel/operation/account/LimitBandwidthOperation.php';
 require_once 'com/imasters/php/cpanel/operation/account/ListAccountsOperation.php';
+require_once 'com/imasters/php/cpanel/operation/account/ModifyAccountOperation.php';
 require_once 'com/imasters/php/cpanel/operation/account/PasswdOperation.php';
 
 /**
@@ -74,6 +75,17 @@ class AccountModule extends cPanelModule {
 		}
 
 		return $listAccountsOperation;
+	}
+
+	/**
+	 * @param	string $user
+	 * @return	ModifyAccountOperation
+	 */
+	public function modifyAccount( $user ) {
+		$modifyAccountOperation = new ModifyAccountOperation( $this->cpanel );
+		$modifyAccountOperation->setUser( $user );
+
+		return $modifyAccountOperation;
 	}
 
 	/**
