@@ -7,6 +7,7 @@
 
 require_once 'com/imasters/php/http/HTTPCookieManager.php';
 require_once 'com/imasters/php/cpanel/operation/account/AccountModule.php';
+require_once 'com/imasters/php/cpanel/operation/dns/DNSModule.php';
 
 /**
  * @brief	Implementação da API do cPanel
@@ -53,6 +54,14 @@ class cPanel {
 	 */
 	public function account() {
 		return new AccountModule( $this );
+	}
+
+	/**
+	 * @brief	Módulo para gerenciamento de DNS
+	 * @return	DNSModule
+	 */
+	public function dns() {
+		return new DNSModule( $this );
 	}
 
 	/**
