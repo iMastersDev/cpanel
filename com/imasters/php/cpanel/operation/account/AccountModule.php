@@ -7,6 +7,7 @@
 
 require_once 'com/imasters/php/cpanel/cPanelModule.php';
 require_once 'com/imasters/php/cpanel/operation/account/AccountSummaryOperation.php';
+require_once 'com/imasters/php/cpanel/operation/account/ChangePackageOperation.php';
 require_once 'com/imasters/php/cpanel/operation/account/CreateAccountOperation.php';
 require_once 'com/imasters/php/cpanel/operation/account/EditQuotaOperation.php';
 require_once 'com/imasters/php/cpanel/operation/account/LimitBandwidthOperation.php';
@@ -17,6 +18,7 @@ require_once 'com/imasters/php/cpanel/operation/account/PasswdOperation.php';
 require_once 'com/imasters/php/cpanel/operation/account/SuspendAccountOperation.php';
 require_once 'com/imasters/php/cpanel/operation/account/TerminateAccountOperation.php';
 require_once 'com/imasters/php/cpanel/operation/account/UnsuspendAccountOperation.php';
+require_once 'com/imasters/php/cpanel/operation/account/ViewPrivilegesOperation.php';
 
 /**
  * @brief	Módulo de contas do cPanel
@@ -179,5 +181,12 @@ class AccountModule extends cPanelModule {
 		$unsuspendAccountOperation->setUser( $user );
 
 		return $unsuspendAccountOperation;
+	}
+
+	/**
+	 * @return	ViewPrivilegesOperation
+	 */
+	public function viewPrivileges() {
+		return new ViewPrivilegesOperation( $this->cpanel );
 	}
 }
