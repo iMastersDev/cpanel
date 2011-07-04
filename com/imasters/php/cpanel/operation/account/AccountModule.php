@@ -11,6 +11,7 @@ require_once 'com/imasters/php/cpanel/operation/account/CreateAccountOperation.p
 require_once 'com/imasters/php/cpanel/operation/account/EditQuotaOperation.php';
 require_once 'com/imasters/php/cpanel/operation/account/LimitBandwidthOperation.php';
 require_once 'com/imasters/php/cpanel/operation/account/ListAccountsOperation.php';
+require_once 'com/imasters/php/cpanel/operation/account/ListSuspendedAccountsOperation.php';
 require_once 'com/imasters/php/cpanel/operation/account/ModifyAccountOperation.php';
 require_once 'com/imasters/php/cpanel/operation/account/PasswdOperation.php';
 
@@ -89,6 +90,13 @@ class AccountModule extends cPanelModule {
 		}
 
 		return $listAccountsOperation;
+	}
+
+	/**
+	 * @return	ListSuspendedAccountsOperation
+	 */
+	public function listSuspendedAccounts() {
+		return new ListSuspendedAccountsOperation( $this->cpanel );
 	}
 
 	/**
