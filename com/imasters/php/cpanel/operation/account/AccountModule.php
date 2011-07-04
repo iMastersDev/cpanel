@@ -116,4 +116,20 @@ class AccountModule extends cPanelModule {
 
 		return $passwdOperation;
 	}
+
+	/**
+	 * @param	string $user
+	 * @param	string $reason
+	 * @return	SuspendAccountOperation
+	 */
+	public function suspendAccount( $user , $reason = null ) {
+		$suspendAccountOperation = new SuspendAccountOperation( $this->cpanel );
+		$suspendAccountOperation->setUser( $user );
+
+		if ( !is_null( $reason ) ) {
+			$suspendAccountOperation->setReason( $reason );
+		}
+
+		return $suspendAccountOperation;
+	}
 }
