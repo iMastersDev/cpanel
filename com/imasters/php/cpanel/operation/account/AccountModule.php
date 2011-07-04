@@ -16,6 +16,7 @@ require_once 'com/imasters/php/cpanel/operation/account/ListAccountsOperation.ph
 require_once 'com/imasters/php/cpanel/operation/account/ListSuspendedAccountsOperation.php';
 require_once 'com/imasters/php/cpanel/operation/account/ModifyAccountOperation.php';
 require_once 'com/imasters/php/cpanel/operation/account/PasswdOperation.php';
+require_once 'com/imasters/php/cpanel/operation/account/SetSiteIPOperation.php';
 require_once 'com/imasters/php/cpanel/operation/account/SuspendAccountOperation.php';
 require_once 'com/imasters/php/cpanel/operation/account/TerminateAccountOperation.php';
 require_once 'com/imasters/php/cpanel/operation/account/UnsuspendAccountOperation.php';
@@ -153,6 +154,17 @@ class AccountModule extends cPanelModule {
 		$passwdOperation->setDbPassUpdate( $db_pass_update );
 
 		return $passwdOperation;
+	}
+
+	/**
+	 * @param	string $ip
+	 * @return	SetSiteIPOperation
+	 */
+	public function setSiteIP( $ip ) {
+		$setSiteIPOperation = new SetSiteIPOperation( $this->cpanel );
+		$setSiteIPOperation->setIp( $ip );
+
+		return $setSiteIPOperation;
 	}
 
 	/**
