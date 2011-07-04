@@ -9,6 +9,7 @@ require_once 'com/imasters/php/cpanel/cPanelModule.php';
 require_once 'com/imasters/php/cpanel/operation/account/AccountSummaryOperation.php';
 require_once 'com/imasters/php/cpanel/operation/account/ChangePackageOperation.php';
 require_once 'com/imasters/php/cpanel/operation/account/CreateAccountOperation.php';
+require_once 'com/imasters/php/cpanel/operation/account/DomainUserDataOperation.php';
 require_once 'com/imasters/php/cpanel/operation/account/EditQuotaOperation.php';
 require_once 'com/imasters/php/cpanel/operation/account/LimitBandwidthOperation.php';
 require_once 'com/imasters/php/cpanel/operation/account/ListAccountsOperation.php';
@@ -63,6 +64,17 @@ class AccountModule extends cPanelModule {
 		$createAccountOperation->setDomain( $domain );
 
 		return $createAccountOperation;
+	}
+
+	/**
+	 * @param	string $domain
+	 * @return	DomainUserDataOperation
+	 */
+	public function domainUserData( $domain ) {
+		$domainUserDataOperation = new DomainUserDataOperation( $this->cpanel );
+		$domainUserDataOperation->setDomain( $domain );
+
+		return $domainUserDataOperation;
 	}
 
 	/**
