@@ -207,6 +207,7 @@ class AddZoneRecordOperation extends cPanelOperation {
 	 */
 	public function setAddress( $address ) {
 		$this->address = $address;
+		$this->httpConnection->setParam( 'address' , $address );
 	}
 
 	/**
@@ -214,6 +215,7 @@ class AddZoneRecordOperation extends cPanelOperation {
 	 */
 	public function setClass( $class ) {
 		$this->class = $class;
+		$this->httpConnection->setParam( 'class' , $class );
 	}
 
 	/**
@@ -221,6 +223,7 @@ class AddZoneRecordOperation extends cPanelOperation {
 	 */
 	public function setCname( $cname ) {
 		$this->cname = $cname;
+		$this->httpConnection->setParam( 'cname' , $cname );
 	}
 
 	/**
@@ -228,6 +231,7 @@ class AddZoneRecordOperation extends cPanelOperation {
 	 */
 	public function setExchange( $exchange ) {
 		$this->exchange = $exchange;
+		$this->httpConnection->setParam( 'exchange' , $exchange );
 	}
 
 	/**
@@ -235,6 +239,7 @@ class AddZoneRecordOperation extends cPanelOperation {
 	 */
 	public function setName( $name ) {
 		$this->name = $name;
+		$this->httpConnection->setParam( 'name' , $name );
 	}
 
 	/**
@@ -242,6 +247,7 @@ class AddZoneRecordOperation extends cPanelOperation {
 	 */
 	public function setNsname( $nsname ) {
 		$this->nsname = $nsname;
+		$this->httpConnection->setParam( 'nsname' , $nsname );
 	}
 
 	/**
@@ -249,6 +255,7 @@ class AddZoneRecordOperation extends cPanelOperation {
 	 */
 	public function setPort( $port ) {
 		$this->port = $port;
+		$this->httpConnection->setParam( 'port' , $port );
 	}
 
 	/**
@@ -256,6 +263,7 @@ class AddZoneRecordOperation extends cPanelOperation {
 	 */
 	public function setPreference( $preference ) {
 		$this->preference = $preference;
+		$this->httpConnection->setParam( 'preference' , $preference );
 	}
 
 	/**
@@ -263,6 +271,7 @@ class AddZoneRecordOperation extends cPanelOperation {
 	 */
 	public function setPtdrname( $ptdrname ) {
 		$this->ptdrname = $ptdrname;
+		$this->httpConnection->setParam( 'ptdrname' , $ptdrname );
 	}
 
 	/**
@@ -270,6 +279,7 @@ class AddZoneRecordOperation extends cPanelOperation {
 	 */
 	public function setTarget( $target ) {
 		$this->target = $target;
+		$this->httpConnection->setParam( 'target' , $target );
 	}
 
 	/**
@@ -277,6 +287,7 @@ class AddZoneRecordOperation extends cPanelOperation {
 	 */
 	public function setTtl( $ttl ) {
 		$this->ttl = $ttl;
+		$this->httpConnection->setParam( 'ttl' , $ttl );
 	}
 
 	/**
@@ -284,6 +295,7 @@ class AddZoneRecordOperation extends cPanelOperation {
 	 */
 	public function setType( $type ) {
 		$this->type = $type;
+		$this->httpConnection->setParam( 'type' , $type );
 	}
 
 	/**
@@ -291,6 +303,7 @@ class AddZoneRecordOperation extends cPanelOperation {
 	 */
 	public function setWeight( $weight ) {
 		$this->weight = $weight;
+		$this->httpConnection->setParam( 'weight' , $weight );
 	}
 
 	/**
@@ -298,5 +311,6 @@ class AddZoneRecordOperation extends cPanelOperation {
 	 */
 	public function setZone( $zone ) {
 		$this->zone = $zone;
+		$this->httpConnection->setParam( 'zone' , $zone );
 	}
 }

@@ -8,6 +8,7 @@
 require_once 'com/imasters/php/cpanel/cPanelModule.php';
 require_once 'com/imasters/php/cpanel/operation/dns/AddDNSZoneOperation.php';
 require_once 'com/imasters/php/cpanel/operation/dns/AddZoneRecordOperation.php';
+require_once 'com/imasters/php/cpanel/operation/dns/EditZoneRecordOperation.php';
 
 /**
  * @brief	Módulo de DNS
@@ -36,5 +37,18 @@ class DNSModule extends cPanelModule {
 		$addZoneRecordOperation->setZone( $zone );
 
 		return $addZoneRecordOperation;
+	}
+
+	/**
+	 * @param	string $domain
+	 * @param	string $Line
+	 * @return	EditZoneRecordOperation
+	 */
+	public function editZoneRecord( $domain , $Line ) {
+		$editZoneRecordOperation = new EditZoneRecordOperation( $this->cpanel );
+		$editZoneRecordOperation->setDomain( $domain );
+		$editZoneRecordOperation->setLine( $Line );
+
+		return $editZoneRecordOperation;
 	}
 }
