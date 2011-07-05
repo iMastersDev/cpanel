@@ -8,10 +8,10 @@
 require_once 'com/imasters/php/cpanel/cPanelOperation.php';
 
 /**
- * @brief	Adiciona uma zona de DNS
+ * @brief	Cria uma zona de DNS
  * @author	João Batista Neto <neto.joaobatista@imasters.com.br>
  */
-class AddDNSOperation extends cPanelOperation {
+class AddDNSZoneOperation extends cPanelOperation {
 	/**
 	 * @var	string
 	 */

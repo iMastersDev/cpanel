@@ -6,7 +6,8 @@
  */
 
 require_once 'com/imasters/php/cpanel/cPanelModule.php';
-require_once 'com/imasters/php/cpanel/operation/dns/AddDNSOperation.php';
+require_once 'com/imasters/php/cpanel/operation/dns/AddDNSZoneOperation.php';
+require_once 'com/imasters/php/cpanel/operation/dns/AddZoneRecordOperation.php';
 
 /**
  * @brief	Módulo de DNS
@@ -18,11 +19,22 @@ class DNSModule extends cPanelModule {
 	 * @param	string $ip
 	 * @return	AddDNSOperation
 	 */
-	public function addDNS( $domain , $ip ) {
-		$addDNSOperation = new AddDNSOperation( $this->cpanel );
-		$addDNSOperation->setDomain( $domain );
-		$addDNSOperation->setIp( $ip );
+	public function addDNSZone( $domain , $ip ) {
+		$addDNSZoneOperation = new AddDNSZoneOperation( $this->cpanel );
+		$addDNSZoneOperation->setDomain( $domain );
+		$addDNSZoneOperation->setIp( $ip );
 
-		return $addDNSOperation;
+		return $addDNSZoneOperation;
+	}
+
+	/**
+	 * @param	string $zone
+	 * @return	AddZoneRecordOperation
+	 */
+	public function addZoneRecord( $zone ) {
+		$addZoneRecordOperation = new AddZoneRecordOperation( $this->cpanel );
+		$addZoneRecordOperation->setZone( $zone );
+
+		return $addZoneRecordOperation;
 	}
 }
