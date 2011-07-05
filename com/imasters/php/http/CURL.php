@@ -2,7 +2,7 @@
 /**
  * @brief	Protocolo HTTP
  * @details	Classes e interfaces relacionadas com o protocolo HTTP
- * @package com.buscape.php.http
+ * @package com.imasters.php.http
  */
 
 require_once 'com/imasters/php/http/HTTPRequest.php';
