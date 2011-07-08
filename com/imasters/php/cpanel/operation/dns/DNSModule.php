@@ -8,6 +8,7 @@
 require_once 'com/imasters/php/cpanel/cPanelModule.php';
 require_once 'com/imasters/php/cpanel/operation/dns/AddDNSZoneOperation.php';
 require_once 'com/imasters/php/cpanel/operation/dns/AddZoneRecordOperation.php';
+require_once 'com/imasters/php/cpanel/operation/dns/DumpZoneOperation.php';
 require_once 'com/imasters/php/cpanel/operation/dns/EditZoneRecordOperation.php';
 require_once 'com/imasters/php/cpanel/operation/dns/GetZoneRecordOperation.php';
 require_once 'com/imasters/php/cpanel/operation/dns/KillDNSOperation.php';
@@ -40,6 +41,17 @@ class DNSModule extends cPanelModule {
 		$addZoneRecordOperation->setZone( $zone );
 
 		return $addZoneRecordOperation;
+	}
+
+	/**
+	 * @param	string $domain
+	 * @return	DumpZoneOperation
+	 */
+	public function dumpZone( $domain ) {
+		$dumpZoneOperation = new DumpZoneOperation( $this->cpanel );
+		$dumpZoneOperation->setDomain( $domain );
+
+		return $dumpZoneOperation;
 	}
 
 	/**
