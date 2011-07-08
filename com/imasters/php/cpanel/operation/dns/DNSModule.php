@@ -10,6 +10,7 @@ require_once 'com/imasters/php/cpanel/operation/dns/AddDNSZoneOperation.php';
 require_once 'com/imasters/php/cpanel/operation/dns/AddZoneRecordOperation.php';
 require_once 'com/imasters/php/cpanel/operation/dns/EditZoneRecordOperation.php';
 require_once 'com/imasters/php/cpanel/operation/dns/GetZoneRecordOperation.php';
+require_once 'com/imasters/php/cpanel/operation/dns/KillDNSOperation.php';
 
 /**
  * @brief	Módulo de DNS
@@ -64,5 +65,16 @@ class DNSModule extends cPanelModule {
 		$getZoneRecordOperation->setLine( $Line );
 
 		return $getZoneRecordOperation;
+	}
+
+	/**
+	 * @param	string $domain
+	 * @return	KillDNSOperation
+	 */
+	public function killDNS( $domain ) {
+		$killDNSOperation = new KillDNSOperation( $this->cpanel );
+		$killDNSOperation->setDomain( $domain );
+
+		return $killDNSOperation;
 	}
 }
